@@ -14,6 +14,7 @@ public class MasterForm extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(100,200);
         setLocationRelativeTo(this);
+        // testing
     }
 
     public static void main(String[] args) {
