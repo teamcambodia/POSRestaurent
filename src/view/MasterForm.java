@@ -3,17 +3,18 @@ package view;
 import javax.swing.WindowConstants;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
 import java.lang.Override;
 import java.lang.Runnable;
 
 public class MasterForm extends JFrame {
 
-    public MasterForm() {
+	private static final long serialVersionUID = -4605512809806631176L;
+
+	public MasterForm() {
         // comment top testing
         setTitle("Master Form");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(100,200);
+        setSize(500,200);
         setLocationRelativeTo(this);
         // testing
     }
