@@ -3,7 +3,6 @@ package view;
 import javax.swing.WindowConstants;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import java.lang.Override;
 import java.lang.Runnable;
 
 public class MasterForm extends JFrame {
