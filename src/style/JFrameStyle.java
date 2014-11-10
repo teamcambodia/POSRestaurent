@@ -37,9 +37,11 @@ public class JFrameStyle {
 		try {
 			Font fontCreated = Font.createFont(Font.TRUETYPE_FONT, fontEnglish).deriveFont(size);
 			com.setFont(fontCreated);
-		} catch (FontFormatException | IOException e) {
+		} catch (FontFormatException e) {
 			e.printStackTrace();
-		}	    
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 	}
 	
 	/**
@@ -50,9 +52,11 @@ public class JFrameStyle {
 		try {
 			Font fontCreated = Font.createFont(Font.TRUETYPE_FONT, fontKhmer).deriveFont(size);
 			com.setFont(fontCreated);
-		} catch (FontFormatException | IOException e) {
+		} catch (FontFormatException e) {
 			e.printStackTrace();
-		}	    
+		} catch (IOException ex) {
+            ex.printStackTrace();
+        }
 	}
 	
 	/**
