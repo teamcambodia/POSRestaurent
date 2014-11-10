@@ -10,6 +10,7 @@ import java.lang.Runnable;
 public class MasterForm extends JFrame {
 
     public MasterForm() {
+        // comment top testing
         setTitle("Master Form");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(100,200);
