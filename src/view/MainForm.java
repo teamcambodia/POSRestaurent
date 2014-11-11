@@ -15,7 +15,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
-
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
 
