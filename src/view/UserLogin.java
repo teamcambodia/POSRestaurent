@@ -12,7 +12,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.text.JTextComponent;
-
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
 
