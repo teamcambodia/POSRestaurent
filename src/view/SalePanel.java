@@ -46,7 +46,7 @@ public class SalePanel extends MasterFrame {
 		/**
 		 * create JPopup
 		 */
-		JPopupMenu popUp = createMenuPopup();
+		final JPopupMenu popUp = createMenuPopup();
 		panelToolBar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent evt) {
@@ -101,7 +101,7 @@ public class SalePanel extends MasterFrame {
 		/**
 		 * create JPopup
 		 */
-		JPopupMenu popUp = createMenuPopup();
+		final JPopupMenu popUp = createMenuPopup();
 		panelCenter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent evt) {
