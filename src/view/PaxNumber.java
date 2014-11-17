@@ -1,18 +1,25 @@
 package view;
 
 import net.miginfocom.swing.MigLayout;
-import sun.security.krb5.internal.PAEncTSEnc;
-
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
  * Created by PONNIMOL on 11/15/2014.
  */
-public class PaxNumber extends JDialog{
-    public PaxNumber(){
+public class PaxNumber extends JDialog {
+    
+	private static final long serialVersionUID = 7056488304448756384L;
+	
+	public PaxNumber(){
         setTitle("Number of PAX");
         setSize(400,300);
         setLocationRelativeTo(this);
@@ -22,7 +29,7 @@ public class PaxNumber extends JDialog{
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
-    JPanel PAX(){
+    public JPanel PAX(){
         JPanel panel = new JPanel(new MigLayout());
         JPanel panelTop = new JPanel(new MigLayout());
         //JPanel panelMiddle = new JPanel(new MigLayout());
@@ -167,7 +174,7 @@ public class PaxNumber extends JDialog{
             }
         });
 
-        /* End Bock Event Button */
+        /* End Block Event Button */
 
         panel.add(panelTop,"cell 0 0, push, grow");
         //panel.add(panelMiddle,"cell 0 1, push, grow");
@@ -179,7 +186,7 @@ public class PaxNumber extends JDialog{
         try {
             UIManager.put("Synthetica.window.decoration",Boolean.FALSE);
             UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
-        }catch (Exception e){}
+        } catch (Exception e){}
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -187,6 +194,10 @@ public class PaxNumber extends JDialog{
             }
         });
     }
+    
+    /**
+     * @declare variable
+     */
     private JLabel lblPax;
     private JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnOK,btnCancel,btnBackSpace;
     private JTextField txtPax;
