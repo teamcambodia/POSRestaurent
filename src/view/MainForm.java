@@ -156,8 +156,8 @@ public class MainForm extends MasterFrame {
 		panelStatusBar = new JPanel(new MigLayout("inset 5"));
 		lblStatus = new JLabel("Current user: Developer");
 		panelStatusBar.setBackground(new Color(240,240,240));
-//		lblStatus.setForeground(Color.WHITE);
 		panelStatusBar.add(lblStatus);
+		frmStyle.formatStyle(new JLabel[]{lblStatus});
 		return panelStatusBar;
 	}
 	

@@ -135,6 +135,7 @@ public class SalePanel extends MasterFrame {
 		panelStatusBar.setBackground(new Color(240,240,240));
 		panelStatusBar.add(lblStatusL, "cell 0 0, pushx, growx");
 		panelStatusBar.add(lblStatusR, "cell 1 0, pushx, growx");
+		frmStyle.formatStyle(new JLabel[]{lblStatusL,lblStatusR});
 		return panelStatusBar;
 	}
 	
