@@ -11,6 +11,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JPopupMenu.Separator;
 import javax.swing.KeyStroke;
+
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
 
@@ -37,6 +42,12 @@ public class SalePanel extends MasterFrame {
 		getContentPane().add(createTop(), BorderLayout.NORTH);
 		getContentPane().add(createContent(), BorderLayout.CENTER);
 		getContentPane().add(createStatusBar(), BorderLayout.SOUTH);
+	}
+	
+	@Override
+	public void frmOpened(WindowEvent evt) {
+		super.frmOpened(evt);
+		th.start();
 	}
 
 	private JPanel createTop() {
@@ -119,13 +130,27 @@ public class SalePanel extends MasterFrame {
 	private JPanel createStatusBar() {
 		panelStatusBar = new JPanel(new MigLayout("inset 5"));
 		lblStatusL = new JLabel("Current user: Developer");
-		lblStatusR = new JLabel("Date: 08-Nov-2014 10:42 PM");
+		lblStatusR = new JLabel();
 		lblStatusR.setHorizontalAlignment(JLabel.RIGHT);
 		panelStatusBar.setBackground(new Color(240,240,240));
 		panelStatusBar.add(lblStatusL, "cell 0 0, pushx, growx");
 		panelStatusBar.add(lblStatusR, "cell 1 0, pushx, growx");
 		return panelStatusBar;
 	}
+	
+	Runnable run = new Runnable() {		
+		@Override
+		public void run() {
+			do {
+				long time = System.currentTimeMillis();
+				DateFormat dfTime = new SimpleDateFormat("hh:mm:ss a");
+				DateFormat dfDay = new SimpleDateFormat("EEEE, dd-MMM-yyy");
+				lblStatusR.setText("Date: " + dfDay.format(time) + " " + dfTime.format(time));
+			} while (true);			
+		}
+	};
+	
+	Thread th = new Thread(run);
 	
 	private void addMouseClickButton(MouseEvent me) {
 		JButton btn = (JButton) me.getSource();
