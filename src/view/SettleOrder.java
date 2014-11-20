@@ -48,6 +48,7 @@ public class SettleOrder extends MasterFrame {
 		model.setColumnIdentifiers(new String[]{"Menu Name","Qty","Price"});
 		table.setModel(model);
 		table.setRowHeight(35);
+		table.getTableHeader().setReorderingAllowed(false);
 		model.addRow(new Object[]{"Cocacola",2,"0.50$"});
 		model.addRow(new Object[]{"Fanta",3,"0.70$"});
 		panel.add(spPane, "Center");
