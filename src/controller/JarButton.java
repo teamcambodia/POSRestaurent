@@ -12,7 +12,7 @@ public class JarButton extends JButton {
 
 	private static final long serialVersionUID = -3825755188636465295L;
 	public Font font = new Font("Ubuntu Mono", Font.PLAIN, 15);
-	public Color bgColor = new Color(210, 37, 71);
+	public Color bgColor = new Color(0, 119, 201);
 	public Color fontColor = new Color(255, 255, 255);
 
 	public JarButton(String title) {

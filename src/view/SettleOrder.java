@@ -30,10 +30,11 @@ public class SettleOrder extends MasterFrame {
 
 	public SettleOrder() {
 		setTitle("Settle Order");
-		setSize(1000, 500);
+		setSize(1098, 500);
 		setLocation((sizeWidth - this.getWidth())/2, (sizeHeight - this.getHeight())/2);
+		setResizable(false);
 		setLayout(new MigLayout());
-		add(panelLeft(), "cell 0 0 1 2");
+		add(panelLeft(), "cell 0 0 1 2, pushx, growx");
 		add(panelRightTop(), "cell 1 0, pushx, growx");
 		add(panelRightBottom(), "cell 1 1, pushx, growx");
 	}
