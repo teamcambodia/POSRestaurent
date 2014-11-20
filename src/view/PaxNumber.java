@@ -1,14 +1,16 @@
 package view;
 
+import controller.JarLabel;
+import controller.JarTextField;
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -32,14 +34,13 @@ public class PaxNumber extends JDialog {
     public JPanel PAX(){
         JPanel panel = new JPanel(new MigLayout());
         JPanel panelTop = new JPanel(new MigLayout());
-        //JPanel panelMiddle = new JPanel(new MigLayout());
         JPanel panelBottom = new JPanel(new MigLayout());
 
         /*
         Initialize Component
          */
-        lblPax = new JLabel("Enter Nubmer of PAX");
-        txtPax = new JTextField();
+        lblPax = new JarLabel("Enter Nubmer of PAX");
+        txtPax = new JarTextField("");
         btn0 = new JButton("0");
         btn1 = new JButton("1");
         btn2 = new JButton("2");
@@ -176,8 +177,29 @@ public class PaxNumber extends JDialog {
 
         /* End Block Event Button */
 
+
+        /*
+        Event key type in text box
+         */
+        txtPax.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent keyEvent) {
+
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent keyEvent) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent keyEvent) {
+
+            }
+        });
+
         panel.add(panelTop,"cell 0 0, push, grow");
-        //panel.add(panelMiddle,"cell 0 1, push, grow");
         panel.add(panelBottom,"cell 0 1, push, grow");
         return panel;
     }
@@ -199,7 +221,7 @@ public class PaxNumber extends JDialog {
     /**
      * declare variable
      */
-    private JLabel lblPax;
+    private JarLabel lblPax;
     private JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnOK,btnCancel,btnBackSpace;
-    private JTextField txtPax;
+    private JarTextField txtPax;
 }

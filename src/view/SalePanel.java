@@ -95,12 +95,12 @@ public class SalePanel extends MasterFrame {
 				public void mouseClicked(MouseEvent evt) {
 					addMouseClickButton(evt);
 				}
-				
+
 				@Override
 				public void mouseEntered(MouseEvent evt) {
 					((JButton) evt.getSource()).setBackground(new Color(67, 136, 204).darker());
 				}
-				
+
 				@Override
 				public void mouseExited(MouseEvent evt) {
 					((JButton) evt.getSource()).setBackground(getBackground());
