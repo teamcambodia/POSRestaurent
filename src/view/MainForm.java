@@ -162,7 +162,7 @@ public class MainForm extends MasterFrame {
 	}
 	
 	/**
-	 * @declare variable
+	 * declare variable
 	 */
 	public JMenuBar menuBar;
 	public JPanel panelToolBar, panelCenter, panelStatusBar;

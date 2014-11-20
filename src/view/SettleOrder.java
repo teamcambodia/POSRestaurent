@@ -30,13 +30,13 @@ public class SettleOrder extends MasterFrame {
 
 	public SettleOrder() {
 		setTitle("Settle Order");
-		setSize(1098, 500);
+		setSize(1098, 550);
 		setLocation((sizeWidth - this.getWidth())/2, (sizeHeight - this.getHeight())/2);
 		setResizable(false);
 		setLayout(new MigLayout());
-		add(panelLeft(), "cell 0 0 1 2, pushx, growx");
-		add(panelRightTop(), "cell 1 0, pushx, growx");
-		add(panelRightBottom(), "cell 1 1, pushx, growx");
+		add(panelLeft(), "cell 0 0 1 2, push, grow");
+		add(panelRightTop(), "cell 1 0, push, grow");
+		add(panelRightBottom(), "cell 1 1, push, grow");
 	}
 	
 	public JPanel panelLeft() {
@@ -52,6 +52,8 @@ public class SettleOrder extends MasterFrame {
 		table.setColorRowOdd(new Color(228, 228, 228));
 		table.setColorRowEven(new Color(255, 255, 255));
 		table.setColorRowSelected(new Color(0, 119, 201));
+		table.setWidthColumn(0, 300);
+		table.setAlignmentColumnCenter(1);
 		model.addRow(new Object[]{"Cocacola",2,"0.50$"});
 		model.addRow(new Object[]{"Fanta",3,"0.70$"});
 		panel.add(spPane, "Center");
@@ -107,6 +109,8 @@ public class SettleOrder extends MasterFrame {
 	
 	public static void main(String[] args) {
 		try {
+//			UIManager.put("Synthetica.window.decoration", Boolean.FALSE);
+//			UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
 			UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");			
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e) {

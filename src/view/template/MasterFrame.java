@@ -46,7 +46,7 @@ public class MasterFrame extends JFrame implements InterfaceJFrame {
 	public void beforeClose() {	}
 
 	/**
-	 * @declare variable
+	 * declare variable
 	 */
 	public Dimension sizeScreen = Toolkit.getDefaultToolkit().getScreenSize();
 	public int sizeWidth = sizeScreen.width, sizeHeight = sizeScreen.height;

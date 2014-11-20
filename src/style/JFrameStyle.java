@@ -21,10 +21,7 @@ public class JFrameStyle {
 	public static File fontKhmer = new File("fonts/KH-SIEMREAP_2.TTF");
 	public static int fontSize = 16;
 	
-	/**
-	 * @param frame, width, height
-	 * this method for set form to center of screen
-	 */
+	
 	public void setPositionCenterScreen(JFrame frame, int width, int height) {		
 		frame.setLocation((width - frame.getWidth())/2, (height - frame.getHeight())/2);
 	}

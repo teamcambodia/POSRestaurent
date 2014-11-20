@@ -49,9 +49,11 @@ public class SalePanel extends MasterFrame {
 	}
 
 	private JPanel createTop() {
-		panelToolBar = new JPanel();
-		panelToolBar.setPreferredSize(new Dimension(sizeWidth, 100));
+		panelToolBar = new JPanel(new MigLayout("inset 0, debug"));
+		panelToolBar.setPreferredSize(new Dimension(sizeWidth, 200));
 		panelToolBar.setBackground(new Color(67, 136, 204));
+		JLabel lbl = new JLabel(new ImageIcon(getClass().getResource("/images/banner.jpg")));
+		panelToolBar.add(lbl, "push, grow");
 		/**
 		 * create JPopup
 		 */
@@ -200,7 +202,7 @@ public class SalePanel extends MasterFrame {
 	}
 	
 	/**
-	 * @declare variable
+	 * declare variable
 	 */
 	public JPanel panelToolBar, panelCenter, panelStatusBar;
     public JButton btnSalePanel,btnTable,btnMenu,btnReport;

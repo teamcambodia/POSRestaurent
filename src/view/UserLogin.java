@@ -114,7 +114,7 @@ public class UserLogin extends MasterFrame {
 	}
 	
 	/**
-	 * @declare variable
+	 * declare variable
 	 */
 	public JLabel lblPOS,lblMS,lblUsername,lblPassword,lblOutlet;
 	public JTextField txtUsername;

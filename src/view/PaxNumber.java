@@ -196,7 +196,7 @@ public class PaxNumber extends JDialog {
     }
     
     /**
-     * @declare variable
+     * declare variable
      */
     private JLabel lblPax;
     private JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnOK,btnCancel,btnBackSpace;
