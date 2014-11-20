@@ -97,7 +97,7 @@ public class MainForm extends MasterFrame {
 	@Override
 	public void frmClosing(WindowEvent evt) {
 		this.dispose();
-		new SalePanel().setVisible(true);
+		UserLogin.main(null);
 	}
 	
 	public JPanel createToolBar() {
@@ -106,7 +106,8 @@ public class MainForm extends MasterFrame {
 		panelToolBar.setBackground(new Color(240, 240, 240));
 		btnSalePanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Sale Panel clicked");
+            	dispose();
+                new SalePanel().setVisible(true);
             }
         });
  

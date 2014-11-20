@@ -49,11 +49,11 @@ public class SalePanel extends MasterFrame {
 	}
 
 	private JPanel createTop() {
-		panelToolBar = new JPanel(new MigLayout("inset 0, debug"));
+		panelToolBar = new JPanel(new MigLayout("inset 0"));
 		panelToolBar.setPreferredSize(new Dimension(sizeWidth, 200));
-		panelToolBar.setBackground(new Color(67, 136, 204));
+//		panelToolBar.setBackground(new Color(67, 136, 204));
 		JLabel lbl = new JLabel(new ImageIcon(getClass().getResource("/images/banner.jpg")));
-		panelToolBar.add(lbl, "push, grow");
+		panelToolBar.add(lbl, "right, push, grow");
 		/**
 		 * create JPopup
 		 */
@@ -70,6 +70,12 @@ public class SalePanel extends MasterFrame {
 			}
 		});
 		return panelToolBar;
+	}
+	
+	@Override
+	public void frmClosing(WindowEvent evt) {
+		this.dispose();
+		new MainForm().setVisible(true);
 	}
 	
 	private JPanel createContent() {
