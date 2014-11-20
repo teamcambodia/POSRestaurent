@@ -41,7 +41,7 @@ public class SettleOrder extends MasterFrame {
 	
 	public JPanel panelLeft() {
 		JPanel panel = new JPanel(new BorderLayout());
-		panel.setBorder(BorderFactory.createTitledBorder(null, "Item List Information", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Ubuntu Mono", Font.PLAIN, 15), Color.BLACK));
+		panel.setBorder(BorderFactory.createTitledBorder(null, "Item List Information", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Segoe UI", Font.PLAIN, 15), Color.BLACK));
 		table = new JTable();
 		model = new DefaultTableModel();
 		spPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -56,7 +56,7 @@ public class SettleOrder extends MasterFrame {
 	
 	public JPanel panelRightTop() {
 		JPanel panel = new JPanel(new MigLayout("inset 15"));
-		panel.setBorder(BorderFactory.createTitledBorder(null, "Payment Panel", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Ubuntu Mono", Font.PLAIN, 15), Color.BLACK));
+		panel.setBorder(BorderFactory.createTitledBorder(null, "Payment Panel", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Segoe UI", Font.PLAIN, 15), Color.BLACK));
 		label = new JarLabel[4];
 		panel.add(label[0] = new JarLabel("ID:"), "cell 0 0");
 		panel.add(label[1] = new JarLabel("Name:"), "cell 0 1");
@@ -80,7 +80,7 @@ public class SettleOrder extends MasterFrame {
 	
 	public JPanel panelRightBottom() {
 		JPanel panel = new JPanel(new MigLayout("inset 15"));
-		panel.setBorder(BorderFactory.createTitledBorder(null, "Payment Information", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Ubuntu Mono", Font.PLAIN, 15), Color.BLACK));
+		panel.setBorder(BorderFactory.createTitledBorder(null, "Payment Information", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Segoe UI", Font.PLAIN, 15), Color.BLACK));
 		label = new JarLabel[4];
 		panel.add(label[0] = new JarLabel("Sub Total:"), "cell 0 0");
 		panel.add(label[1] = new JarLabel("Discount 0.00%:"), "cell 0 1");

@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 public class JarTextField extends JTextField {
 
 	private static final long serialVersionUID = -1853107512012681210L;
-	private Font font = new Font("Ubuntu Mono", Font.PLAIN, 18);
+	private Font font = new Font("Segoe UI", Font.PLAIN, 18);
 	
 	public JarTextField(String title) {
 		setText(title);
