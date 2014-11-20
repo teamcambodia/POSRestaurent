@@ -18,8 +18,8 @@ public class JarButton extends JButton {
 	public JarButton(String title) {
 		setText(title);
 		setFont(font);
-		setBackground(bgColor);
-		setForeground(fontColor);
+//		setBackground(bgColor);
+//		setForeground(fontColor);
 		setPreferredSize(new Dimension(this.getSize().width, 40));
 		setFocusable(false);
 		addActionListener(new ActionListener() {			
