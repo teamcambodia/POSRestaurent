@@ -182,6 +182,7 @@ public class PaxNumber extends JDialog {
         return panel;
     }
 
+
     public static void main(String[] args) {
         try {
             UIManager.put("Synthetica.window.decoration",Boolean.FALSE);
