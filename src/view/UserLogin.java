@@ -30,7 +30,7 @@ public class UserLogin extends MasterFrame {
 	private JPanel userLogin() {
 		JPanel panel = new JPanel(new MigLayout());
 		/**
-		 * initialize components
+		 * initialize componentss
 		 */
 		lblPOS = new JLabel("POS");
 		lblMS = new JLabel("Management System");
