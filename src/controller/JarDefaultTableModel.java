@@ -18,7 +18,7 @@ public class JarDefaultTableModel extends DefaultTableModel {
 	}
 	
 	/**
-	 * @param table
+	 * @param table the table
 	 * this method for remove value from selected row
 	 */
 	public void removeSelectedRows(JTable table) {

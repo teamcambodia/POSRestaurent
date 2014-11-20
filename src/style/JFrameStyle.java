@@ -27,7 +27,7 @@ public class JFrameStyle {
 	}
 	
 	/**
-	 * @param com, type, size
+	 * @param com the component, type, size
 	 * this method for embed font English
 	 */
 	public void formatFontEnglish(Component com, float size) {
@@ -42,7 +42,7 @@ public class JFrameStyle {
 	}
 	
 	/**
-	 * @param com, type, size
+	 * @param com the component, type, size
 	 * this method for embed font Khmer
 	 */
 	public void formatFontKhmer(Component com, float size) {
