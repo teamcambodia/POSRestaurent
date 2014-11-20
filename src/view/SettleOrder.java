@@ -7,15 +7,15 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
 import controller.JarButton;
+import controller.JarDefaultTableModel;
 import controller.JarLabel;
+import controller.JarTable;
 import controller.JarTextField;
 
 public class SettleOrder extends MasterFrame {
@@ -24,9 +24,9 @@ public class SettleOrder extends MasterFrame {
 	private JarButton button[];
 	private JarTextField text[];
 	private JarLabel label[];
-	private JTable table;
+	private JarTable table;
 	private JScrollPane spPane;
-	private DefaultTableModel model;
+	private JarDefaultTableModel model;
 
 	public SettleOrder() {
 		setTitle("Settle Order");
@@ -42,13 +42,16 @@ public class SettleOrder extends MasterFrame {
 	public JPanel panelLeft() {
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.setBorder(BorderFactory.createTitledBorder(null, "Item List Information", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, new Font("Segoe UI", Font.PLAIN, 15), Color.BLACK));
-		table = new JTable();
-		model = new DefaultTableModel();
+		table = new JarTable();
+		model = new JarDefaultTableModel();
 		spPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		model.setColumnIdentifiers(new String[]{"Menu Name","Qty","Price"});
 		table.setModel(model);
 		table.setRowHeight(35);
 		table.getTableHeader().setReorderingAllowed(false);
+		table.setColorRowOdd(new Color(228, 228, 228));
+		table.setColorRowEven(new Color(255, 255, 255));
+		table.setColorRowSelected(new Color(0, 119, 201));
 		model.addRow(new Object[]{"Cocacola",2,"0.50$"});
 		model.addRow(new Object[]{"Fanta",3,"0.70$"});
 		panel.add(spPane, "Center");
