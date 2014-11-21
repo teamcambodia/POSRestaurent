@@ -1,5 +1,6 @@
 package view;
 
+import controller.GlobalMethod;
 import controller.JarLabel;
 import controller.JarTextField;
 import net.miginfocom.swing.MigLayout;
@@ -27,7 +28,6 @@ public class PaxNumber extends JDialog {
         setLocationRelativeTo(this);
         setLayout(new MigLayout("inset 0, center"));
         getContentPane().add(PAX(),"cell 0 0, push,grow");
-
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
@@ -59,8 +59,8 @@ public class PaxNumber extends JDialog {
         /*
         Add Component to Panel
          */
-        panelTop.add(lblPax,"cell 0 0,growy");
-        panelTop.add(txtPax,"cell 1 0,push,grow");
+        panelTop.add(lblPax,"cell 0 0");
+        panelTop.add(txtPax,"cell 1 0,pushx,growx");
 
         panelBottom.add(btn1,"cell 0 0,push,grow");
         panelBottom.add(btn2,"cell 1 0,push,grow");
@@ -171,7 +171,7 @@ public class PaxNumber extends JDialog {
         btnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JOptionPane.showMessageDialog(btnCancel,"Cancel");
+                JOptionPane.showMessageDialog(null,"Cancel");
             }
         });
 
@@ -199,8 +199,10 @@ public class PaxNumber extends JDialog {
             }
         });
 
-        panel.add(panelTop,"cell 0 0, push, grow");
+        panel.add(panelTop,"cell 0 0, pushx, growx");
         panel.add(panelBottom,"cell 0 1, push, grow");
+        method = new GlobalMethod();
+        method.inputNumberOnly(txtPax);
         return panel;
     }
 
@@ -224,4 +226,5 @@ public class PaxNumber extends JDialog {
     private JarLabel lblPax;
     private JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnOK,btnCancel,btnBackSpace;
     private JarTextField txtPax;
+    private GlobalMethod method;
 }
