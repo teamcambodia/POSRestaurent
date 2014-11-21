@@ -4,13 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
+
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
+import controller.GlobalMethod;
 import controller.JarButton;
 import controller.JarDefaultTableModel;
 import controller.JarLabel;
@@ -26,6 +29,7 @@ public class SettleOrder extends MasterFrame {
 	private JarTable table;
 	private JScrollPane spPane;
 	private JarDefaultTableModel model;
+	private GlobalMethod method;
 
 	public SettleOrder() {
 		setTitle("Settle Order");
@@ -80,6 +84,8 @@ public class SettleOrder extends MasterFrame {
 		panelButton.add(button[3] = new JarButton("Choose Staff"), "cell 3 0, pushx, growx");
 		panelButton.add(button[4] = new JarButton("Reset"), "cell 4 0, pushx, growx");
 		panel.add(panelButton, "cell 0 4 2 1, center, growx");
+		method = new GlobalMethod();
+		method.inputNumberWithDotOnlyOne(text[3]);
 		return panel;
 	}
 	
@@ -103,6 +109,11 @@ public class SettleOrder extends MasterFrame {
 		panelButton.add(button[2] = new JarButton("Settle"), "cell 2 0, pushx, growx");
 		panelButton.add(button[3] = new JarButton("Close"), "cell 3 0, pushx, growx");
 		panel.add(panelButton, "cell 0 4 2 1, center, growx");
+		method = new GlobalMethod();
+		method.inputNumberWithDotOnlyOne(text[0]);
+		method.inputNumberWithDotOnlyOne(text[1]);
+		method.inputNumberWithDotOnlyOne(text[2]);
+		method.inputNumberWithDotOnlyOne(text[3]);
 		return panel;
 	}
 	
