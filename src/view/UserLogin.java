@@ -101,6 +101,7 @@ public class UserLogin extends MasterFrame {
 	}
 	
 	public static void main(String[] args) {
+		// testing command
 		try {
 			UIManager.put("Synthetica.window.decoration", Boolean.FALSE);
 			UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
