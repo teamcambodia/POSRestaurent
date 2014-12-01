@@ -121,7 +121,7 @@ public class UserLogin extends MasterFrame {
 	public void frmOpened(WindowEvent evt) {
 		frmStyle.setPositionCenterScreen(this, sizeWidth, sizeHeight);
 		try {
-			new ConnectionMySQL("localhost","pharmacy192.168.0.20","root","");
+			new ConnectionMySQL("localhost","posrestaurent","root","");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
