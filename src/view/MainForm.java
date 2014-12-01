@@ -114,7 +114,8 @@ public class MainForm extends MasterFrame {
         btnTable = new JButton("Table");
         btnTable.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Table clicked");
+                dispose();
+                new Payment().setVisible(true);
             }
         });
  

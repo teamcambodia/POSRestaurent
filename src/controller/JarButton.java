@@ -20,7 +20,7 @@ public class JarButton extends JButton {
 		setFont(font);
 //		setBackground(bgColor);
 //		setForeground(fontColor);
-		setPreferredSize(new Dimension(this.getSize().width, 40));
+		setPreferredSize(new Dimension(this.getSize().width, 30));
 		setFocusable(false);
 		addActionListener(new ActionListener() {			
 			@Override

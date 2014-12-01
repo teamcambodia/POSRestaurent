@@ -3,15 +3,11 @@ package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.*;
 import javax.swing.text.JTextComponent;
+import model.ConnectionMySQL;
 import net.miginfocom.swing.MigLayout;
 import view.template.MasterFrame;
 
@@ -91,13 +87,44 @@ public class UserLogin extends MasterFrame {
 	}
 	
 	public void btnLoginActionPerformed(ActionEvent evt) {
-		this.dispose();
-		new MainForm().setVisible(true);
+		String username = txtUsername.getText();
+		String password = String.valueOf(txtPassword.getPassword());
+		if (username.trim().length()==0) {
+			JOptionPane.showMessageDialog(this, "Please input username.");
+			txtUsername.grabFocus();
+		} else if (password.trim().length()==0) {
+			JOptionPane.showMessageDialog(this, "Please input password.");
+			txtPassword.grabFocus();
+		} else {
+			try {
+				String query = "SELECT * FROM user WHERE user_name=? AND user_pass=?";
+				PreparedStatement ps = ConnectionMySQL.dataConn.prepareStatement(query);
+				ps.setString(1, username);
+				ps.setString(2, password);
+				ResultSet rs = ps.executeQuery();
+				if (rs.first()) {
+					JOptionPane.showMessageDialog(null, "Success ful.");
+					this.dispose();
+					new MainForm().setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Not found.");
+				}
+				rs.close();
+				ps.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	@Override
 	public void frmOpened(WindowEvent evt) {
 		frmStyle.setPositionCenterScreen(this, sizeWidth, sizeHeight);
+		try {
+			new ConnectionMySQL("localhost","pharmacy192.168.0.20","root","");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
