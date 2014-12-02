@@ -2,39 +2,43 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  * Created by CHANNATH on 29-Nov-2014.
  */
 public class ConnectionMySQL {
-    public static Connection dataConn = null;
-    public String host;
-    public String database;
-    public String username;
-    public String password;
+    public Connection dataConn = null;
+    public String sourceURL = null;
 
-    public ConnectionMySQL(String host, String database, String username, String password) throws Exception {
-        this.host = host;
-        this.database = database;
-        this.username = username;
-        this.password = password;
-        Class.forName("com.mysql.jdbc.Driver");
-        dataConn = DriverManager.getConnection("jdbc:mysql://"+host+"/"+database, username, password);
+    public ConnectionMySQL() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            sourceURL = "jdbc:mysql://localhost/posrestaurent";
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Could not initialize driver.");
+            return;
+        }
     }
 
-    public String getHost() {
-        return host;
+    public Connection connect() {
+        try {
+            dataConn = DriverManager.getConnection(sourceURL, "root", "");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Could not connect to data source mysql.");
+        }
+        return dataConn;
     }
 
-    public String getDatabase() {
-        return database;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
+    public void close(Connection conn) {
+        if (conn != null) {
+            try {
+                dataConn.close();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Could not close connection.");
+                return;
+            }
+        }
     }
 }

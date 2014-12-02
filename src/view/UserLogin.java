@@ -3,6 +3,7 @@ package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.*;
@@ -14,6 +15,7 @@ import view.template.MasterFrame;
 public class UserLogin extends MasterFrame {
 
 	private static final long serialVersionUID = -2629617272401661541L;
+	public Connection con = null;
 
 	public UserLogin() {
 		setTitle("Login");
@@ -87,6 +89,8 @@ public class UserLogin extends MasterFrame {
 	}
 	
 	public void btnLoginActionPerformed(ActionEvent evt) {
+		ConnectionMySQL dbCon = new ConnectionMySQL();
+		con = dbCon.connect();
 		String username = txtUsername.getText();
 		String password = String.valueOf(txtPassword.getPassword());
 		if (username.trim().length()==0) {
@@ -98,7 +102,7 @@ public class UserLogin extends MasterFrame {
 		} else {
 			try {
 				String query = "SELECT * FROM user WHERE user_name=? AND user_pass=?";
-				PreparedStatement ps = ConnectionMySQL.dataConn.prepareStatement(query);
+				PreparedStatement ps = con.prepareStatement(query);
 				ps.setString(1, username);
 				ps.setString(2, password);
 				ResultSet rs = ps.executeQuery();
@@ -111,6 +115,7 @@ public class UserLogin extends MasterFrame {
 				}
 				rs.close();
 				ps.close();
+				con.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -120,11 +125,6 @@ public class UserLogin extends MasterFrame {
 	@Override
 	public void frmOpened(WindowEvent evt) {
 		frmStyle.setPositionCenterScreen(this, sizeWidth, sizeHeight);
-		try {
-			new ConnectionMySQL("localhost","posrestaurent","root","");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	public static void main(String[] args) {
